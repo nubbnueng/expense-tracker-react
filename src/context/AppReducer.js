@@ -9,14 +9,7 @@ export default (state, action) => {
         case 'ADD_TRANSACTION':
             return {
                 ...state,
-                transactions: [
-                    ...state.transactions,
-                    {
-                        id: state.transactions.length + 1,
-                        text: action.payload.text,
-                        amount: +action.payload.amount,
-                    }
-                ]
+                transactions: [...state.transactions, action.payload]
             }
         default:
             return state

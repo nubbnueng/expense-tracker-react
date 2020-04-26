@@ -7,9 +7,15 @@ export const AddTransaction = () => {
     const [text, setText] = useState('')
     const [amount, setAmount] = useState(0)
     const { addTransaction } = useContext(GlobalContext)
+    
     const onSubmitHandler = (e) => {
         e.preventDefault()
-        addTransaction(text, amount)
+        const newTransaction = {
+            text,
+            amount: +amount,
+            id: Math.floor(Math.random() * 100000000)
+        }
+        addTransaction(newTransaction)
     }
 
     return (
