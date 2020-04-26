@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import getAmountText from '../utils/getAmountText'
+import formatAmount from '../utils/formatAmount'
 
 import { GlobalContext } from '../context/GlobalState'
 
@@ -12,7 +12,7 @@ export const Transaction = ({ transaction }) => {
     return (
         <li className={getTransactionClassName(amount)}>
             {text}
-            <span>{getAmountText(amount)}</span>
+            <span>{formatAmount(amount)}</span>
             <button className="delete-btn" onClick={() => deleteTransaction(transaction._id)}>x</button>
         </li>
     )

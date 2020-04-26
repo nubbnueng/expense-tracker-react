@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import getAmountText from '../utils/getAmountText'
+import formatAmount from '../utils/formatAmount'
 import { GlobalContext } from '../context/GlobalState'
 
 export const TransactionSummary = () => {
@@ -19,11 +19,11 @@ export const TransactionSummary = () => {
             <div className="inc-exp-container">
                 <div>
                     <h4>Income</h4>
-                    <p className="money plus">{getAmountText(totalIncome)}</p>
+                    <p className="money plus">{formatAmount(totalIncome)}</p>
                 </div>
                 <div>
                     <h4>Expense</h4>
-                    <p className="money minus">{getAmountText(totalExpense)}</p>
+                    <p className="money minus">{formatAmount(totalExpense)}</p>
                 </div>
             </div>
         </>
