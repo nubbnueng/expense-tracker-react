@@ -25,7 +25,6 @@ export const GlobalProvider = ({ children }) => {
                 payload: res.data.data
             })
         } catch (error) {
-            console.log(`Error: ${error.message}`)
             dispatch({
                 type: 'TRANSACTIONS_ERROR',
                 payload: error.data.error
@@ -33,11 +32,19 @@ export const GlobalProvider = ({ children }) => {
         }
     }
 
-    const deleteTransaction = (id) => {
-        dispatch({
-            type: 'DELETE_TRANSACTION',
-            payload: id,
-        })
+    const deleteTransaction = async (id) => {
+        try {
+            await axios.delete(`http://localhost:5000/api/v1/transactions/${id}`)
+            dispatch({
+                type: 'DELETE_TRANSACTION',
+                payload: id,
+            })
+        } catch (error) {
+            dispatch({
+                type: 'TRANSACTIONS_ERROR',
+                payload: error.data.error
+            })
+        }
     }
 
     const addTransaction = (transaction) => {
