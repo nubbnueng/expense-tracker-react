@@ -4,6 +4,7 @@ import { Header } from './components/Header'
 import { Balance } from './components/Balance'
 import { TransactionSummary } from './components/TransactionSummary'
 import { TransactionHistory } from './components/TransactionHistory'
+import { AddTransaction } from './components/AddTransaction'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Balance />
         <TransactionSummary />
         <TransactionHistory />
+        <AddTransaction />
       </div>
     </div>
   );
