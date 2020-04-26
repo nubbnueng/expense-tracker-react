@@ -9,6 +9,10 @@ export const AddTransaction = () => {
 
     const onSubmitHandler = (e) => {
         e.preventDefault()
+        if(text.trim() === '') {
+            alert('Please input transaction text')
+            return
+        }
         if(+amount === 0) {
             alert('Amount must not be zero')
             return
