@@ -6,7 +6,6 @@ import { GlobalContext } from '../context/GlobalState'
 export const Transaction = ({ transaction }) => {
     
     const { deleteTransaction } = useContext(GlobalContext)
-
     const { text, amount } = transaction
     const getTransactionClassName = (amount) => amount < 0 ? 'minus' : 'plus'
 
