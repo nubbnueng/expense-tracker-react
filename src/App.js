@@ -6,9 +6,11 @@ import { TransactionSummary } from './components/TransactionSummary'
 import { TransactionHistory } from './components/TransactionHistory'
 import { AddTransaction } from './components/AddTransaction'
 
+import { GlobalProvider } from './context/GlobalState'
+
 function App() {
   return (
-    <div>
+    <GlobalProvider>
       <Header text='Expense Tracker' />
       <div className="Container">
         <Balance />
@@ -16,7 +18,7 @@ function App() {
         <TransactionHistory />
         <AddTransaction />
       </div>
-    </div>
+    </GlobalProvider>
   );
 }
 
