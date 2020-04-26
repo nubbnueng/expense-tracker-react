@@ -9,6 +9,10 @@ export const AddTransaction = () => {
 
     const onSubmitHandler = (e) => {
         e.preventDefault()
+        if(+amount === 0) {
+            alert('Amount must not be zero')
+            return
+        }
         const newTransaction = {
             id: Math.floor(Math.random() * 100000000),
             text,
