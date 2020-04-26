@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import { Header } from './components/Header'
 import { Balance } from './components/Balance'
-import { IncomeExpenses } from './components/IncomeExpenses'
+import { TransactionSummary } from './components/TransactionSummary'
+import { TransactionHistory } from './components/TransactionHistory'
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <Header text='Expense Tracker' />
       <div className="Container">
         <Balance />
-        <IncomeExpenses />
+        <TransactionSummary />
+        <TransactionHistory />
       </div>
     </div>
   );
